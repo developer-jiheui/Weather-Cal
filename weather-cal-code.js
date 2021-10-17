@@ -17,7 +17,7 @@ const weatherCal = {
     this.fm = iCloudInUse ? FileManager.iCloud() : FileManager.local()
     this.bgPath = this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-" + this.name)
     this.prefPath = this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-preferences-" + name)
-    this.widgetUrl = "https://raw.githubusercontent.com/mzeryck/Weather-Cal/main/weather-cal.js"
+    this.widgetUrl = "https://raw.githubusercontent.com/developer-jiheui/Weather-Cal/main/weather-cal-code.js"
     this.now = new Date()
     this.data = {}
     this.initialized = true
@@ -1881,7 +1881,7 @@ const weatherCal = {
           description: "Leave blank to match the device's locale.",
         },
         units: {
-          val: "imperial",
+          val: "metric",
           name: "Units",
           description: "Use imperial for Fahrenheit or metric for Celsius.",
           type: "enum",
@@ -2196,7 +2196,7 @@ const weatherCal = {
       reminders: {
         name: "Reminders",
         numberOfReminders: {
-          val: "3",
+          val: "8",
           name: "Maximum number of reminders shown",
         }, 
         useRelativeDueDate: {
@@ -2290,12 +2290,12 @@ const weatherCal = {
           type: "bool",
         },
         showRain: {
-          val: false,
+          val: true,
           name: "Show percent chance of rain",
           type: "bool",
         },
         tomorrowShownAtHour: {
-          val: "20",
+          val: "24",
           name: "When to switch to tomorrow's weather",
           description: "Set the hour (in 24-hour time) to switch from the next hour to tomorrow's weather. Use 0 for always, 24 for never.",
         }, 
