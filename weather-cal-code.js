@@ -190,7 +190,8 @@ const weatherCal = {
     if (!apiKey || apiKey == "" || apiKey == null) { return await this.generateAlert("No API key was entered. Try copying the key again and re-running this script.",["Exit"]) }
 
     this.writePreference("weather-cal-api-key", apiKey)
-    const req = new Request("https://api.openweathermap.org/data/2.5/onecall?lat=37.332280&lon=-122.010980&appid=" + apiKey)
+
+    const req = new Request("https://api.openweathermap.org/data/2.5/onecall?lat=30.489772&lon=-99.771335&units=metric&appid=" + apiKey)
     try { val = await req.loadJSON() } catch { val = { current: false } }
 
     if (!val.current) {
@@ -2453,7 +2454,7 @@ if (moduleName == Script.name()) {
       column
     `
     const name = "Weather Cal Widget Builder"
-    await weatherCal.runSetup(name, true, "Weather Cal code", "https://raw.githubusercontent.com/mzeryck/Weather-Cal/main/weather-cal-code.js")
+    await weatherCal.runSetup(name, true, "Weather Cal code", "https://github.com/developer-jiheui/Weather-Cal/blob/main/weather-cal-code.js")
     const w = await weatherCal.createWidget(layout, name, true)
     w.presentLarge()
     Script.complete()
