@@ -191,7 +191,7 @@ const weatherCal = {
 
     this.writePreference("weather-cal-api-key", apiKey)
 
-    const req = new Request("https://api.openweathermap.org/data/2.5/onecall?lat=30.489772&lon=-99.771335&units=metric&appid=" + apiKey)
+    const req = new Request("https://api.openweathermap.org/data/2.5/onecall?lat=49.2643&lon=-123.0961&units=metric&appid=" + apiKey)
     try { val = await req.loadJSON() } catch { val = { current: false } }
 
     if (!val.current) {
